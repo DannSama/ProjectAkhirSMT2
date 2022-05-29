@@ -2,7 +2,14 @@ public class Barang {
     private String NamaBarang ;
     private Double Tanggal ;
     private Double harga ;
-    private int Stok ;
+    protected int Stok ;
+
+    public Barang (String namabarang , Double Tanggal , Double harga , int stok){
+        this.NamaBarang = namabarang;
+        this.Tanggal= Tanggal;
+        this.harga= harga;
+        this.Stok = stok;
+    }
 
     public void setNamaBarang(String namaBarang) {
         NamaBarang = namaBarang;
@@ -34,6 +41,11 @@ public class Barang {
 
     public int getStok() {
         return Stok;
+    }
+    public void displaybarang(){
+        System.out.println("Nama Barang        :" + this.NamaBarang);
+        System.out.println("Harga Barang       :" + this.harga);
+        System.out.println("Stok Barang        :" + this.Stok);
     }
 
 }
