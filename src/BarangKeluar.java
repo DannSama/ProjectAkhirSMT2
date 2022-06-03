@@ -58,16 +58,14 @@ public class BarangKeluar extends Barang {
         for( int i = 0 ; i < 10 ; i++){
             System.out.println("No ke-%i\n" + i);
         }
-        return  ;
+        ;
     }
-    public void StokKeluar(){
+    public void StokKeluar() {
         double TotalStok = getStok() - getSisaStok();
     }
     public void jumlahBarang(){
          SisaStok = Stok - pembelian.nextInt();
 
     }
-
-
 
 }

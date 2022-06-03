@@ -1,7 +1,7 @@
 public class Barang {
-    private String NamaBarang ;
-    private Double Tanggal ;
-    private Double harga ;
+    protected String NamaBarang ;
+    protected Double Tanggal ;
+    protected Double harga ;
     protected int Stok ;
 
     public Barang (String namabarang , Double Tanggal , Double harga , int stok){
