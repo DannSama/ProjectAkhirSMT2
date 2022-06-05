@@ -1,8 +1,8 @@
 public class Barang {
-    protected String NamaBarang ;
-    protected Double Tanggal ;
-    protected Double harga ;
-    protected int Stok ;
+    protected  String NamaBarang ;
+    protected  Double Tanggal ;
+    protected  Double harga ;
+    protected  int Stok ;
 
     public Barang (String namabarang , Double Tanggal , Double harga , int stok){
         this.NamaBarang = namabarang;
@@ -49,3 +49,5 @@ public class Barang {
     }
 
 }
+
+
