@@ -5,13 +5,13 @@ public class main {
         Scanner tokoABC = new Scanner(System.in);
         NamaBarang = tokoABC.nextLine();
         boolean bl = true;
-        Customer cs = new Customer(null, null, null);
+        Customer cs = new Customer();
         ShoppingCart SC = new ShoppingCart();
 
         System.out.println("SELAMAT DATANG ");
-        Barang[] b = new Barang[100];
-        Customer bg = new Customer("zahwa", "19", "zahwa15@gmail.com");
-        bg = new Customer("Athaya", "18", "Athayaabdanhanif@gmail.com");
+        Product[] p = new Product[10];
+        Customer bg = new Customer();
+        bg = new Customer();
 
         Product p1 = new Product("Bakso sosis", 20, 35000);
         Product p2 = new Product("Sosis", 10, 20000);
@@ -26,16 +26,16 @@ public class main {
 
         while (bl) {
             System.out.println("\t\t\t |\t\t\t\tNama Barangt\t\t\t\t|" + "\t\t\t\t(Rp)Harga Barang\t\t\t\t" + "\t\t\t\tStok Barang\t\t\t\t");
-            System.out.println("|1   | " + p1.getNama() + " \t\t\t\t\t\t| " + p1.getPrice() + " \t\t\t| " + p1.getStok() + " \t\t| ");
-            System.out.println("|2   | " + p2.getNama() + " \t\t\t\t\t\t| " + p2.getPrice() + " \t\t\t| " + p2.getStok() + " \t\t| ");
-            System.out.println("|3   | " + p3.getNama() + " \t\t\t\t\t\t| " + p3.getPrice() + " \t\t\t| " + p3.getStok() + " \t\t| ");
-            System.out.println("|4   | " + p4.getNama() + " \t\t\t\t\t\t| " + p4.getPrice() + " \t\t\t| " + p4.getStok() + " \t\t| ");
-            System.out.println("|5   | " + p5.getNama() + " \t\t\t\t\t\t| " + p5.getPrice() + " \t\t\t| " + p5.getStok() + " \t\t| ");
-            System.out.println("|6   | " + p6.getNama() + " \t\t\t\t\t\t| " + p6.getPrice() + " \t\t\t| " + p6.getStok() + " \t\t| ");
-            System.out.println("|7   | " + p7.getNama() + " \t\t\t\t\t\t| " + p7.getPrice() + " \t\t\t| " + p7.getStok() + " \t\t| ");
-            System.out.println("|8   | " + p8.getNama() + " \t\t\t\t\t\t| " + p8.getPrice() + " \t\t\t| " + p8.getStok() + " \t\t| ");
-            System.out.println("|9   | " + p9.getNama() + " \t\t\t\t\t\t| " + p9.getPrice() + " \t\t\t| " + p9.getStok() + " \t\t| ");
-            System.out.println("|10  | " + p10.getNama() + " \t\t\t\t\t\t| " + p10.getPrice() + " \t\t\t| " + p10.getStok() + " \t\t| ");
+            System.out.println("|1   | " + p1.getName() + " \t\t\t\t\t\t| " + p1.getPrice() + " \t\t\t| " + p1.getStok() + " \t\t| ");
+            System.out.println("|2   | " + p2.getName() + " \t\t\t\t\t\t| " + p2.getPrice() + " \t\t\t| " + p2.getStok() + " \t\t| ");
+            System.out.println("|3   | " + p3.getName() + " \t\t\t\t\t\t| " + p3.getPrice() + " \t\t\t| " + p3.getStok() + " \t\t| ");
+            System.out.println("|4   | " + p4.getName() + " \t\t\t\t\t\t| " + p4.getPrice() + " \t\t\t| " + p4.getStok() + " \t\t| ");
+            System.out.println("|5   | " + p5.getName() + " \t\t\t\t\t\t| " + p5.getPrice() + " \t\t\t| " + p5.getStok() + " \t\t| ");
+            System.out.println("|6   | " + p6.getName() + " \t\t\t\t\t\t| " + p6.getPrice() + " \t\t\t| " + p6.getStok() + " \t\t| ");
+            System.out.println("|7   | " + p7.getName() + " \t\t\t\t\t\t| " + p7.getPrice() + " \t\t\t| " + p7.getStok() + " \t\t| ");
+            System.out.println("|8   | " + p8.getName() + " \t\t\t\t\t\t| " + p8.getPrice() + " \t\t\t| " + p8.getStok() + " \t\t| ");
+            System.out.println("|9   | " + p9.getName() + " \t\t\t\t\t\t| " + p9.getPrice() + " \t\t\t| " + p9.getStok() + " \t\t| ");
+            System.out.println("|10  | " + p10.getName() + " \t\t\t\t\t\t| " + p10.getPrice() + " \t\t\t| " + p10.getStok() + " \t\t| ");
             System.out.println();
             System.out.println("99. Tampilkan Barang Belanja");
             System.out.println("0. Kembali Ke Menu Awal ");
@@ -113,7 +113,7 @@ public class main {
                     }
 
 
-                    b[0] = bg;
+                //    p[0] = bg;
 
                     bg.stok(100);
                     bg.info();
@@ -124,13 +124,12 @@ public class main {
                     bg.addSupply(4);
                     bg.info();
 
-                    b[0].setStok(100);
-                    b[0].info();
-
+                    p[0].setStok(100);
+                    p[0].info();
 
                     ////searching di array
-                    for (int i = 0; i < b.length; i++) {
-                        if (b[i].getNama().equals("Stok Barang")) {
+                    for (int i = 0; i < p.length; i++) {
+                        if (p[i].equals("Stok Barang")) {
                             bg.jual(1);
                         }
 

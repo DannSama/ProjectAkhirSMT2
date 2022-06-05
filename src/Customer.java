@@ -146,7 +146,7 @@ public class Customer extends Barang {
         }
     }
 
-    private void stok(int nextInt) {
+    void stok(int nextInt) {
     }
 
 

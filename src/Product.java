@@ -37,4 +37,6 @@ public class Product extends Barang{
     void info() {
 
     }
+
+
 }

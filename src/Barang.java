@@ -10,6 +10,8 @@ public abstract class Barang {
     }
 
     abstract void info();
+
+
 }
 
 
