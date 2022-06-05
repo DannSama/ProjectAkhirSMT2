@@ -1,37 +1,32 @@
 public class Product extends Barang{
-    public void jual(int jumlah){
+    private String name;
+    private int stock;
+    private double price;
 
-        stok = stok - jumlah;
-    }
-    public void addSupply(int jumlah) {
-
-        stok = stok + jumlah;
-    }
-    @Override
-    void info() {
-        System.out.println("Stok :" + stok);
-    }
-
-
-    protected String nama;
-    protected int stok;
-    protected double price;
-
-    public Product ( String nama , int Stok , double price){
-        this.nama = nama ;
-        this.stok = Stok;
+    public Product(String name, int stock, double price) {
+        this.name = name;
+        this.stock = stock;
         this.price = price;
-
     }
 
-    @Override
-    public void setNama(String nama) {
-        this.nama = nama;
+    public String getName() {
+        return name;
     }
 
-    @Override
-    public void setStok(int stok) {
-        this.stok = stok;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    public double getPrice() {
+        return price;
     }
 
     public void setPrice(double price) {
@@ -39,20 +34,7 @@ public class Product extends Barang{
     }
 
     @Override
-    public String getNama() {
-        return nama;
+    void info() {
+
     }
-
-    @Override
-    public int getStok() {
-        return stok;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-
 }
-
-
