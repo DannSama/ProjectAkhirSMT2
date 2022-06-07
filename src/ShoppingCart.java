@@ -1,8 +1,8 @@
 public class ShoppingCart   {
-    protected Product listProduct[];
-    protected int productCount ;
+    private Product[] listProduct;
+    private int productCount ;
 
-    protected ShoppingCart(){
+    public ShoppingCart(){
         listProduct = new Product[20];
         productCount = 0;
     }
@@ -18,10 +18,13 @@ public class ShoppingCart   {
         System.out.println("Total Harga : ");
         return 0;
     }
-    public int displayAllProduct(){
-        return productCount;
+    public void displayAllProduct() {
+        for (int i = 0; i < productCount; i++) {
+            System.out.println("|1  | " + listProduct[i].getName() + " \t\t\t\t\t\t| " + listProduct[i].getPrice() + " \t\t\t| ");
+        }
+        System.out.println("Jumlah Barang Dikeranjang Belanja :"  + productCount);
     }
-    public void resetShopingCart(){
+    public void resetShoppingCart(){
         listProduct = new Product[20];
         productCount = 0;
     }

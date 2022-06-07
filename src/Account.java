@@ -1,16 +1,19 @@
+import java.util.Scanner;
 public class Account {
-    protected String Username ;
+    Scanner scn = new Scanner(System.in);
+    protected String username ;
     protected String password ;
     protected double balance ;
 
     public Account(String username, String password, double balance){
-        this.Username =username;
+        this.username =username;
         this.password = password;
         this.balance = balance;
     }
 
     public void setUsername(String username) {
-        Username = username;
+
+        this.username = username;
     }
 
     public void setPassword(String password) {
@@ -22,7 +25,7 @@ public class Account {
     }
 
     public String getUsername() {
-        return Username;
+        return username;
     }
 
     public String getPassword() {
@@ -31,5 +34,18 @@ public class Account {
 
     public double getBalance() {
         return balance;
+    }
+    public boolean loginChek() {
+        System.out.println("Input Username :");
+        String user = scn.next();
+        System.out.println("Input Password :");
+        String pass = scn.next();
+        if (getUsername().equalsIgnoreCase(user) && getPassword().equalsIgnoreCase(pass)) {
+            System.out.println("Login Berhasil :");
+            return true;
+        } else {
+            System.out.println("Username Atau Password Salah !!!");
+        }
+        return false;
     }
 }

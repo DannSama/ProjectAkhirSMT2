@@ -4,7 +4,7 @@ public class Customer extends Barang {
     protected String nama;
     protected String age;
     protected String Email;
-    protected Account Account;
+    protected Account acc;
     protected ShoppingCart SC;
     protected DebitCart DebitCart;
 
@@ -15,7 +15,7 @@ public class Customer extends Barang {
         this.nama = nama;
         this.age = age;
         this.Email = email;
-        Account = new Account("Zahwa", "123", 1000000);
+        acc = new Account("zahwa","111",100000);
         SC = new ShoppingCart();
         DebitCart = new DebitCart();
     }
@@ -23,12 +23,13 @@ public class Customer extends Barang {
     public void ShowProfile() {
         System.out.println("Nama     :" + nama);
         System.out.println("Umur     :" + age);
-        System.out.println("Username :" + Email);
-        System.out.println("Password :" + Account.getPassword());
-        System.out.println("Balance  :" + Account.balance);
+        System.out.println("Username :" + acc.getUsername());
+        System.out.println("Password :" + acc.getPassword());
+        System.out.println("Balance  :" + acc.balance);
     }
 
-    public void addToCard(Product product) {
+    public void addToCard(Product product)
+    {
         SC.addToCartProcess(product);
     }
 
@@ -38,23 +39,8 @@ public class Customer extends Barang {
 
     public void CheckoutFromCart() {
         double total = SC.calculateTotal();
-        if (total <= Account.getBalance() - total) ;
-        SC.resetShopingCart();
-    }
-
-    public boolean loginChek(String Username, String password) {
-        System.out.println("Input Username :");
-        Username = scn.next();
-        System.out.println("Input Password :");
-        password = scn.next();
-        if (Account.getUsername().equalsIgnoreCase(Username) && Account.getPassword().equalsIgnoreCase(password)) {
-            System.out.println("Login Berhasil :");
-            ShowProfile();
-            onlineShop();
-        } else {
-            System.out.println("Username Atau Password Salah !!!");
-        }
-        return false;
+        if (total <= acc.getBalance() - total) ;
+        SC.resetShoppingCart();
     }
 
 
@@ -62,7 +48,7 @@ public class Customer extends Barang {
         DebitCart = D;
         System.out.println("Input jumlah :");
         jumlah = scn.nextDouble();
-        Account.setBalance(Account.balance + jumlah);
+        acc.setBalance(acc.balance + jumlah);
     }
 
     public void jual(int jumlah) {
@@ -79,42 +65,7 @@ public class Customer extends Barang {
     }
 
     public void hallo() {
-        while (menu) {
-            System.out.println("-------------------------------------");
-            System.out.println("\t\t\t\t\t\t\t\t M E N U \t\t\t\t\t\t");
-            System.out.println("-------------------------------------");
-            System.out.println(" 1. Login");
-            System.out.println(" 2. Register");
-            System.out.println(" 3. Cek Saldo Kredit ");
-            System.out.println(" 99.Logout ");
-            int pilih = scn.nextInt();
 
-            if (pilih == 1) {
-                System.out.println("\t\t\t\t\t\t\t LOGIN MENU \t\t\t\t\t\t\t\t");
-                loginChek(null, null);
-            }
-            if (pilih == 2) {
-                System.out.println("\t\t\t\t\t\t REGISTER MENU \t\t\t\t\t\t");
-                System.out.println("Nama : " + nama);
-                this.nama = scn.next();
-                System.out.println("Umur :" + age);
-                this.age = scn.next();
-                System.out.println("Email :" + Email);
-                this.Email = scn.next();
-                System.out.println("Username : ");
-                Account.setUsername(scn.next());
-                System.out.println("Password :");
-                Account.setPassword(scn.next());
-                System.out.println("REGISTRASI ANDA BERHASIL");
-                ShowProfile();
-            }
-            if (pilih == 3) {
-                System.out.println("Sisa Saldo Kredit Anda : " + DebitCart.getBalance());
-            }
-            if (pilih == 4) {
-                System.exit(0);
-            }
-        }
     }
 
     public void onlineShop() {

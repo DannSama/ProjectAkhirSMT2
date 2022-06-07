@@ -1,4 +1,4 @@
-public class Product extends Barang{
+public class Product{
     private String name;
     private int stock;
     private double price;
@@ -32,11 +32,5 @@ public class Product extends Barang{
     public void setPrice(double price) {
         this.price = price;
     }
-
-    @Override
-    void info() {
-
-    }
-
 
 }
