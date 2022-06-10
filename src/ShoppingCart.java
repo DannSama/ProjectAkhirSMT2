@@ -18,7 +18,7 @@ public class ShoppingCart {
             total += listProduct[i].getPrice();
         }
         System.out.println("Total Harga : " + total);
-        return 0;
+        return total;
     }
 
     public void displayAllProduct() {
@@ -26,7 +26,8 @@ public class ShoppingCart {
             System.out.println("|1  | " + listProduct[i].getName() + " \t\t\t\t\t\t| " + listProduct[i].getPrice() + " \t\t\t| ");
 
         }
-        System.out.println("Jumlah Barang Dikeranjang Belanja : " + productCount);
+        System.out.println("Jumlah Barang Di keranjang Belanja : " + productCount);
+        calculateTotal();
     }
 
     public int getProductCount() {

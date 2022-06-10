@@ -36,14 +36,14 @@ public class main {
             System.out.println("|12 | " + p12.getName() + " \t\t\t\t\t\t| " + p12.getPrice() + " \t\t\t| " + p12.getStock() + " \t\t| ");
             System.out.println("|13 | " + p13.getName() + " \t\t\t\t\t| " + p13.getPrice() + " \t\t\t| " + p13.getStock() + " \t\t| ");
             System.out.println();
-            System.out.println("99.Tamplikan Kerangjang Belanja");
+            System.out.println("99.Tampilkan Keranjang Belanja");
             System.out.println("0.Kembali Ke Menu Sebelumnya");
             System.out.print("Pilihan : ");
             int pilih = why.nextInt();
 
             if (pilih == 0) {
                 pro = false;
-                System.out.println("Apakah anda ingin Kembali Kemenu Sebelumnya?");
+                System.out.println("Apakah anda ingin Kembali Ke menu Sebelumnya?");
                 System.out.println("1.Ya");
                 System.out.println("2.Tidak");
                 int pilihan = why.nextInt();
@@ -115,11 +115,14 @@ public class main {
                 int cek = why.nextInt();
                 if (cek == 0) {
                     cs.checkOutFromCart();
-                    System.out.println("Tekan 1 untuk Melanjutkan");
+                    System.out.println("Tekan -1 untuk keluar | 1 untuk lanjut belanja");
                     System.out.print("Pilihan : ");
                     int cc = why.nextInt();
-                    if (cc == 1) {
-                        pro = true;
+                    if (cc == -1) {
+                        System.exit(0);
+                    }
+                    else if (cc ==1){
+                        cs.onlineShop();
                     }
                 }
             }

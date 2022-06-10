@@ -42,17 +42,20 @@ public class Customer extends Barang {
         if (total <= acc.getBalance()) {
             acc.setBalance(acc.getBalance() - total);
             sc.resetShoppingCart();
+            System.out.println("pembelian berhasil");
+            System.out.println("sisa saldo : "+acc.getBalance());
         }
+        else
+            System.out.println("saldo anda tidak mencukupi, silahkan topup");
     }
 
-    public boolean loginCheck(String username, String password) {
-        System.out.print("Input Username: ");
-        username = why.next();
-        System.out.print("Input Password: ");
-        password = why.next();
-        if (acc.getUsername().equalsIgnoreCase(username) && acc.getPassword().equalsIgnoreCase(password)) {
+    public boolean loginCheck() {
+        System.out.print("Input Username : ");
+        String username = why.next();
+        System.out.print("Input Password : ");
+        String password = why.next();
+        if (username.equalsIgnoreCase(acc.getUsername()) && password.equalsIgnoreCase(acc.getPassword())) {
             System.out.println("Login Berhasil");
-            showProfile();
             onlineShop();
             return true;
         } else {
@@ -61,11 +64,12 @@ public class Customer extends Barang {
         }
     }
 
-    public void topUpBalance(DebitCard d, double jumlah) {
+    public void topUpBalance(DebitCard d) {
         dc = d;
         System.out.print("Input Jumlah : ");
-        jumlah = why.nextDouble();
+        double jumlah = why.nextDouble();
         acc.setBalance(acc.getBalance() + jumlah);
+        dc.setBalance(dc.getBalance()- jumlah);
     }
 
     public void hello() {
@@ -81,20 +85,20 @@ public class Customer extends Barang {
 
             if (pilih == 1) {
                 System.out.println("------------LOGIN MENU---------------");
-                loginCheck(null, null);
+                loginCheck();
 
             }
             if (pilih == 2) {
                 System.out.println("------------REGISTER MENU-----------");
-                System.out.print("Nama :");
+                System.out.print("Nama : ");
                 this.nama = why.next();
-                System.out.print("Umur :");
+                System.out.print("Umur : ");
                 this.age = why.next();
-                System.out.print("Email :");
+                System.out.print("Email : ");
                 this.email = why.next();
-                System.out.println("Username: ");
+                System.out.print("Username : ");
                 acc.setUsername(why.next());
-                System.out.println("Password: ");
+                System.out.print("Password : ");
                 acc.setPassword(why.next());
                 System.out.println("Data Berhasil dibuat!!");
                 showProfile();
@@ -121,7 +125,7 @@ public class Customer extends Barang {
                 menu = false;
             }
             if (pilih == 2) {
-                topUpBalance(dc, 0);
+                topUpBalance(dc);
                 System.out.println("Top up Saldo Berhasil");
             }
             if (pilih == 3) {
