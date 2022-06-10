@@ -1,14 +1,13 @@
 import java.util.Scanner;
 public class main {
     public static void main(String[] args) {
-        Account acc = new Account("Zahwa" , "1111" , 100000);
-        String NamaBarang;
         Scanner tokoABC = new Scanner(System.in);
+        String NamaBarang;
+        Account acc = new Account("Zahwa" , "1111" , 100000);
         boolean menu = true;
         boolean bl = true;
         Customer bg = new Customer();
         ShoppingCart SC = new ShoppingCart();
-
         DebitCart dc = new DebitCart();
         System.out.println("SELAMAT DATANG ");
 
@@ -61,7 +60,7 @@ public class main {
                 System.exit(0);
             }
         }
-        while (bl) {
+        while (acc.loginChek()) {
             System.out.println("|\t\t\t\tNama Barangt\t\t\t|" + "\t\t\t\t(Rp)Harga Barang\t\t\t\t" + "|\t\t\tStok Barang\t\t\t\t");
             System.out.println("|1   | " + p1.getName() + " \t\t\t\t\t\t| " + p1.getPrice() + " \t\t\t\t\t\t\t\t\t\t\t\t| " + p1.getStock() + " \t\t| ");
             System.out.println("|2   | " + p2.getName() + " \t\t\t\t\t\t\t| " + p2.getPrice() + " \t\t\t\t\t\t\t\t\t\t\t\t| " + p2.getStock() + " \t\t| ");
