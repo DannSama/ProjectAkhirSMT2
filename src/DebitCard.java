@@ -1,7 +1,7 @@
-public class DebitCart extends Barang {
-    protected double balance ;
+public class DebitCard {
+    private double balance;
 
-    public void DebitCard(double balance) {
+    public DebitCard(double balance) {
         this.balance = balance;
     }
 
@@ -11,10 +11,5 @@ public class DebitCart extends Barang {
 
     public void setBalance(double balance) {
         this.balance = balance;
-    }
-
-    @Override
-    void info() {
-
     }
 }

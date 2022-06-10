@@ -1,5 +1,6 @@
 public abstract class Barang {
-    protected int stok;
+    //abstrak / kelas induk
+    protected int stok; // protected --> Menyatakan bahwa kelas/method/attribute tersebut dapat diakses oleh kelas lain
 
     public void setStok(int stok) {
         this.stok = stok;

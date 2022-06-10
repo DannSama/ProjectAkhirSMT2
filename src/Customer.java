@@ -1,104 +1,147 @@
 import java.util.Scanner;
 public class Customer extends Barang {
-    Scanner scn = new Scanner(System.in);
-    protected String nama;
-    protected String age;
-    protected String Email;
-    protected Account acc;
-    protected ShoppingCart SC;
-    protected DebitCart DebitCart;
-
+    Scanner why = new Scanner(System.in);
+    private String nama;
+    private String age;
+    private String email;
+    private Account acc;
+    private ShoppingCart sc;
+    private DebitCard dc;
     int pilih;
-    protected boolean menu = true;
+    private boolean menu = true;
 
-    public void Customer(String nama, String age, String email) {
+    public Customer(String nama, String age, String email) {
         this.nama = nama;
         this.age = age;
-        this.Email = email;
-        acc = new Account("zahwa","111",100000);
-        SC = new ShoppingCart();
-        DebitCart = new DebitCart();
+        this.email = email;
+        acc = new Account("asep", "cs1", 50000);
+        sc = new ShoppingCart();
+        dc = new DebitCard(1000000);
+
     }
 
-    public void ShowProfile() {
-        System.out.println("Nama     :" + nama);
-        System.out.println("Umur     :" + age);
-        System.out.println("Username :" + acc.getUsername());
-        System.out.println("Password :" + acc.getPassword());
-        System.out.println("Balance  :" + acc.balance);
+    public void showProfile() {
+        System.out.println("Nama: " + nama);
+        System.out.println("Umur: " + age);
+        System.out.println("Email: " + email);
+        System.out.println("Username: " + acc.getUsername());
+        System.out.println("Password: " + acc.getPassword());
+        System.out.println("Balance: " + acc.getBalance());
     }
 
-    public void addToCard(Product product)
-    {
-        SC.addToCartProcess(product);
+    public void addToCart(Product product) {
+        sc.addToCartProcess(product);
     }
 
-    public void showFromcaert() {
-        SC.displayAllProduct();
+    public void showFromCart() {
+        sc.displayAllProduct();
     }
 
-    public void CheckoutFromCart() {
-        double total = SC.calculateTotal();
-        if (total <= acc.getBalance() - total) ;
-        SC.resetShoppingCart();
+    public void checkOutFromCart() {
+        double total = sc.calculateTotal();
+        if (total <= acc.getBalance()) {
+            acc.setBalance(acc.getBalance() - total);
+            sc.resetShoppingCart();
+        }
     }
 
-
-    public void topUpBalance(DebitCart D, double jumlah) {
-        DebitCart = D;
-        System.out.println("Input jumlah :");
-        jumlah = scn.nextDouble();
-        acc.setBalance(acc.balance + jumlah);
+    public boolean loginCheck(String username, String password) {
+        System.out.print("Input Username: ");
+        username = why.next();
+        System.out.print("Input Password: ");
+        password = why.next();
+        if (acc.getUsername().equalsIgnoreCase(username) && acc.getPassword().equalsIgnoreCase(password)) {
+            System.out.println("Login Berhasil");
+            showProfile();
+            onlineShop();
+            return true;
+        } else {
+            System.out.println("Username atau Password Salah");
+            return false;
+        }
     }
 
-    public void jual(int jumlah) {
-        stok = stok - jumlah;
+    public void topUpBalance(DebitCard d, double jumlah) {
+        dc = d;
+        System.out.print("Input Jumlah : ");
+        jumlah = why.nextDouble();
+        acc.setBalance(acc.getBalance() + jumlah);
     }
 
-    public void addSupply(int jumlah) {
-        stok = stok + jumlah;
-    }
+    public void hello() {
+        while (menu) {
+            System.out.println("----------------------------------------");
+            System.out.println("|\t\t\t\tMENU\t\t\t\t|");
+            System.out.println("---------------------------------------");
+            System.out.println("|1.Login                               |");
+            System.out.println("|2.Register                            |");
+            System.out.println("|3.Cek Saldo Kartu Kredit              |");
+            System.out.println("|99.Logout                             |");
+            int pilih = why.nextInt();
 
-    @Override
-    void info() {
-        System.out.println("Stok :" + stok);
-    }
+            if (pilih == 1) {
+                System.out.println("------------LOGIN MENU---------------");
+                loginCheck(null, null);
 
-    public void hallo() {
-
+            }
+            if (pilih == 2) {
+                System.out.println("------------REGISTER MENU-----------");
+                System.out.print("Nama :");
+                this.nama = why.next();
+                System.out.print("Umur :");
+                this.age = why.next();
+                System.out.print("Email :");
+                this.email = why.next();
+                System.out.println("Username: ");
+                acc.setUsername(why.next());
+                System.out.println("Password: ");
+                acc.setPassword(why.next());
+                System.out.println("Data Berhasil dibuat!!");
+                showProfile();
+            }
+            if (pilih == 3) {
+                System.out.println("Saldo Kartu Kredit Anda : " + dc.getBalance());
+            }
+            if (pilih == 99) {
+                System.exit(0);
+            }
+        }
     }
 
     public void onlineShop() {
         while (menu) {
-            System.out.println("WELCOME TO TOKO ABC ");
-            System.out.println("1. Mulai Belanja ");
-            System.out.println("2. Top Up OVO");
-            System.out.println("3. Informasi Akun");
-            System.out.println("4. Info stok Barang ");
-            System.out.println("99. Kembali ke menu login");
-            int pilihan = scn.nextInt();
+            System.out.println("|______________Selamat Datang di TOKO ABC______________|");
+            System.out.println("|1.Mulai Belanja                                       |");
+            System.out.println("|2.Top Up SCash                                        |");
+            System.out.println("|3.Informasi Akun                                      |");
+            System.out.println("|99.Kembali Ke Menu Login                              |");
+            int pilih = why.nextInt();
 
-            if (pilihan == 1) {
+            if (pilih == 1) {
                 menu = false;
             }
-            if (pilihan == 2) {
-                topUpBalance(DebitCart, 0);
-                System.out.println("Saldo Anda berhasil ");
+            if (pilih == 2) {
+                topUpBalance(dc, 0);
+                System.out.println("Top up Saldo Berhasil");
             }
-            if (pilihan == 3) {
-                ShowProfile();
+            if (pilih == 3) {
+                showProfile();
             }
-            if (pilihan == 4) {
-                stok(scn.nextInt());
-            }
-            if (pilihan == 99) {
-                hallo();
+            if (pilih == 99) {
+                hello();
             }
         }
     }
+
+
+
 
     void stok(int nextInt) {
     }
 
 
+    @Override
+    void info() {
+
+    }
 }
