@@ -145,7 +145,6 @@ public class main {
                     if (pilih == 99) {
                         bl = false;
                         bg.showFromcaert();
-
                         System.out.println();
                         System.out.println("0.Checkout");
                         System.out.print("Pilihan : ");
@@ -161,15 +160,6 @@ public class main {
                         }
                     }
                 }
-
-                //    p[0] = bg;
-
-
-
-                    ////searching di array
-
-
-
                 }
             }
         }

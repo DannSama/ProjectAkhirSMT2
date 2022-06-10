@@ -30,10 +30,12 @@ public class Customer extends Barang {
 
     public void addToCard(Product product)
     {
+
         SC.addToCartProcess(product);
     }
 
     public void showFromcaert() {
+
         SC.displayAllProduct();
     }
 
@@ -44,10 +46,10 @@ public class Customer extends Barang {
     }
 
 
-    public void topUpBalance(DebitCart D, double jumlah) {
+    public void topUpBalance(DebitCart D) {
         DebitCart = D;
         System.out.println("Input jumlah :");
-        jumlah = scn.nextDouble();
+        double jumlah = scn.nextDouble();
         acc.setBalance(acc.balance + jumlah);
     }
 
@@ -70,7 +72,7 @@ public class Customer extends Barang {
 
     public void onlineShop() {
         while (menu) {
-            System.out.println("WELCOME TO TOKO ABC ");
+            System.out.println("WELCOME TO MAKMUR ABADI ");
             System.out.println("1. Mulai Belanja ");
             System.out.println("2. Top Up OVO");
             System.out.println("3. Informasi Akun");
@@ -82,7 +84,7 @@ public class Customer extends Barang {
                 menu = false;
             }
             if (pilihan == 2) {
-                topUpBalance(DebitCart, 0);
+                topUpBalance(DebitCart);
                 System.out.println("Saldo Anda berhasil ");
             }
             if (pilihan == 3) {
