@@ -121,9 +121,8 @@ public class main {
                     if (cc == -1) {
                         System.exit(0);
                     }
-                    else if (cc ==1){
-                        cs.onlineShop();
-                    }
+                    else
+                        pro = true;
                 }
             }
 
