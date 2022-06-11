@@ -5,6 +5,7 @@ public class main {
         Scanner why = new Scanner(System.in);
         Customer cs = new Customer(null, null, null);
         ShoppingCart sc = new ShoppingCart();
+        Product[] p;
         Product p1 = new Product("Bakso", 20, 35000);
         Product p2 = new Product("Sosis", 10, 25000);
         Product p3 = new Product("Nuget", 7, 9500);
@@ -18,9 +19,10 @@ public class main {
         Product p11 = new Product("Basreng", 33, 10000);
         Product p12 = new Product("Cireng", 20, 15000);
         Product p13 = new Product("Bakso Cireng", 66, 25000);
-        cs.hello();
+
 
         while (pro) {
+            cs.onlineShop();
             System.out.println("|No | " + "Nama Barang \t\t\t\t\t| " + "Harga (Rp) \t\t\t| " + "Stok Barang \t| ");
             System.out.println("|1  | " + p1.getNama() + " \t\t\t\t\t\t| " + p1.getprice() + " \t\t\t| " + p1.getStok() + " \t\t| ");
             System.out.println("|2  | " + p2.getNama() + " \t\t\t\t\t\t| " + p2.getprice() + " \t\t\t| " + p2.getStok() + " \t\t| ");
@@ -115,7 +117,8 @@ public class main {
                 int cek = why.nextInt();
                 if (cek == 0) {
                     cs.checkOutFromCart();
-                    System.out.println("Tekan -1 untuk keluar | 1 untuk lanjut belanja | 0 untuk logout");
+                    System.out.println("-1. keluar");
+                    System.out.println("1. lanjut belanja");
                     System.out.print("Pilihan : ");
                     int cc = why.nextInt();
                     if (cc == -1) {
@@ -123,9 +126,6 @@ public class main {
                     }
                     else if (cc == 1){
                         pro = true;
-                    }
-                    else if (cc == 0){
-                        cs.hello();
                     }
                 }
             }

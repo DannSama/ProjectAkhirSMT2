@@ -20,14 +20,14 @@ public class Customer extends Barang {
 
     }
 
-    public void showProfile() {
+    /*public void showProfile() {
         System.out.println("Nama: " + nama);
         System.out.println("Umur: " + age);
         System.out.println("Email: " + email);
         System.out.println("Username: " + acc.getUsername());
         System.out.println("Password: " + acc.getPassword());
         System.out.println("Balance: " + acc.getBalance());
-    }
+    }*/
 
     public void addToCart(Product product) {
         sc.addToCartProcess(product);
@@ -40,16 +40,18 @@ public class Customer extends Barang {
     public void checkOutFromCart() {
         double total = sc.calculateTotal();
         if (total <= acc.getBalance()) {
-            acc.setBalance(acc.getBalance() - total);
+            System.out.print("uang : ");
+            double mon = why.nextDouble();
+            double change;
             sc.resetShoppingCart();
-            System.out.println("pembelian berhasil");
-            System.out.println("sisa saldo : "+acc.getBalance());
+            change = mon - total;
+            System.out.println("kembalian : "+change);
+            System.out.println("purchase success");
+           // System.out.println("sisa saldo : "+acc.getBalance());
         }
-        else
-            System.out.println("saldo anda tidak mencukupi, silahkan topup");
     }
 
-    public boolean loginCheck() {
+   /* public boolean loginCheck() {
         System.out.print("Input Username : ");
         String username = why.next();
         System.out.print("Input Password : ");
@@ -110,29 +112,20 @@ public class Customer extends Barang {
                 System.exit(0);
             }
         }
-    }
+    }*/
 
     public void onlineShop() {
         while (menu) {
-            System.out.println("|______________Selamat Datang di TOKO ABC______________|");
+            System.out.println("|________________TOKO SINAR MUTIARA ABADI______________|");
             System.out.println("|1.Mulai Belanja                                       |");
-            System.out.println("|2.Top Up SCash                                        |");
-            System.out.println("|3.Informasi Akun                                      |");
-            System.out.println("|99.Kembali Ke Menu Login                              |");
+            System.out.println("|99.LOGOUT                                             |");
             int pilih = why.nextInt();
 
             if (pilih == 1) {
                 menu = false;
             }
-            if (pilih == 2) {
-                topUpBalance(dc);
-                System.out.println("Top up Saldo Berhasil");
-            }
-            if (pilih == 3) {
-                showProfile();
-            }
             if (pilih == 99) {
-                hello();
+                System.exit(0);
             }
         }
     }
