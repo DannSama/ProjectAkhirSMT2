@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Customer extends Barang {
+public class Customer {
     Scanner why = new Scanner(System.in);
     private String nama;
     private String age;
@@ -14,9 +14,9 @@ public class Customer extends Barang {
         this.nama = nama;
         this.age = age;
         this.email = email;
-        acc = new Account("asep", "cs1", 50000);
+        //acc = new Account("asep", "cs1", 50000);
         sc = new ShoppingCart();
-        dc = new DebitCard(1000000);
+       // dc = new DebitCard(1000000);
 
     }
 
@@ -130,8 +130,5 @@ public class Customer extends Barang {
         }
     }
 
-    @Override
-    void info() {
 
-    }
 }

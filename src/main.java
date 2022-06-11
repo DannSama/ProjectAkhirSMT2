@@ -5,7 +5,6 @@ public class main {
         Scanner why = new Scanner(System.in);
         Customer cs = new Customer(null, null, null);
         ShoppingCart sc = new ShoppingCart();
-        Product[] p;
         Product p1 = new Product("Bakso", 20, 35000);
         Product p2 = new Product("Sosis", 10, 25000);
         Product p3 = new Product("Nuget", 7, 9500);
