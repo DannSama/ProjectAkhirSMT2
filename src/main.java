@@ -22,19 +22,19 @@ public class main {
 
         while (pro) {
             System.out.println("|No | " + "Nama Barang \t\t\t\t\t| " + "Harga (Rp) \t\t\t| " + "Stok Barang \t| ");
-            System.out.println("|1  | " + p1.getName() + " \t\t\t\t\t\t| " + p1.getPrice() + " \t\t\t| " + p1.getStock() + " \t\t| ");
-            System.out.println("|2  | " + p2.getName() + " \t\t\t\t\t\t| " + p2.getPrice() + " \t\t\t| " + p2.getStock() + " \t\t| ");
-            System.out.println("|3  | " + p3.getName() + " \t\t\t\t\t\t| " + p3.getPrice() + " \t\t\t| " + p3.getStock() + " \t\t| ");
-            System.out.println("|4  | " + p4.getName() + " \t\t\t\t\t| " + p4.getPrice() + "\t\t\t| " + p4.getStock() + " \t\t| ");
-            System.out.println("|5  | " + p5.getName() + "\t\t\t\t\t| " + p5.getPrice() + "\t\t\t| " + p5.getStock() + " \t\t| ");
-            System.out.println("|6  | " + p6.getName() + "\t\t\t\t\t| " + p6.getPrice() + "\t\t\t| " + p6.getStock() + " \t\t| ");
-            System.out.println("|7  | " + p7.getName() + " \t\t\t\t| " + p7.getPrice() + " \t\t\t| " + p7.getStock() + " \t\t| ");
-            System.out.println("|8  | " + p8.getName() + " \t\t\t\t\t| " + p8.getPrice() + " \t\t\t| " + p8.getStock() + " \t\t| ");
-            System.out.println("|9  | " + p9.getName() + " \t\t\t\t\t| " + p9.getPrice() + " \t\t\t| " + p9.getStock() + " \t\t| ");
-            System.out.println("|10 | " + p10.getName() + " \t\t\t\t\t| " + p10.getPrice() + " \t\t\t| " + p10.getStock() + " \t\t| ");
-            System.out.println("|11 | " + p11.getName() + "\t\t\t\t\t\t| " + p11.getPrice() + " \t\t\t| " + p11.getStock() + " \t\t| ");
-            System.out.println("|12 | " + p12.getName() + " \t\t\t\t\t\t| " + p12.getPrice() + " \t\t\t| " + p12.getStock() + " \t\t| ");
-            System.out.println("|13 | " + p13.getName() + " \t\t\t\t\t| " + p13.getPrice() + " \t\t\t| " + p13.getStock() + " \t\t| ");
+            System.out.println("|1  | " + p1.getNama() + " \t\t\t\t\t\t| " + p1.getprice() + " \t\t\t| " + p1.getStok() + " \t\t| ");
+            System.out.println("|2  | " + p2.getNama() + " \t\t\t\t\t\t| " + p2.getprice() + " \t\t\t| " + p2.getStok() + " \t\t| ");
+            System.out.println("|3  | " + p3.getNama() + " \t\t\t\t\t\t| " + p3.getprice() + " \t\t\t| " + p3.getStok() + " \t\t| ");
+            System.out.println("|4  | " + p4.getNama() + " \t\t\t\t\t| " + p4.getprice() + "\t\t\t| " + p4.getStok() + " \t\t| ");
+            System.out.println("|5  | " + p5.getNama() + "\t\t\t\t\t| " + p5.getprice() + "\t\t\t| " + p5.getStok() + " \t\t| ");
+            System.out.println("|6  | " + p6.getNama() + "\t\t\t\t\t| " + p6.getprice() + "\t\t\t| " + p6.getStok() + " \t\t| ");
+            System.out.println("|7  | " + p7.getNama() + " \t\t\t\t| " + p7.getprice() + " \t\t\t| " + p7.getStok() + " \t\t| ");
+            System.out.println("|8  | " + p8.getNama() + " \t\t\t\t\t| " + p8.getprice() + " \t\t\t| " + p8.getStok() + " \t\t| ");
+            System.out.println("|9  | " + p9.getNama() + " \t\t\t\t\t| " + p9.getprice() + " \t\t\t| " + p9.getStok() + " \t\t| ");
+            System.out.println("|10 | " + p10.getNama() + " \t\t\t\t\t| " + p10.getprice() + " \t\t\t| " + p10.getStok() + " \t\t| ");
+            System.out.println("|11 | " + p11.getNama() + "\t\t\t\t\t\t| " + p11.getprice() + " \t\t\t| " + p11.getStok() + " \t\t| ");
+            System.out.println("|12 | " + p12.getNama() + " \t\t\t\t\t\t| " + p12.getprice() + " \t\t\t| " + p12.getStok() + " \t\t| ");
+            System.out.println("|13 | " + p13.getNama() + " \t\t\t\t\t| " + p13.getprice() + " \t\t\t| " + p13.getStok() + " \t\t| ");
             System.out.println();
             System.out.println("99.Tampilkan Keranjang Belanja");
             System.out.println("0.Kembali Ke Menu Sebelumnya");
@@ -56,55 +56,55 @@ public class main {
             }
             if (pilih == 1) {
                 cs.addToCart(p1);
-                p1.setStock(p1.getStock() - 1);
+                p1.setStok(p1.getStok() - 1);
             }
             if (pilih == 2) {
                 cs.addToCart(p2);
-                p2.setStock(p2.getStock() - 1);
+                p2.setStok(p2.getStok() - 1);
             }
             if (pilih == 3) {
                 cs.addToCart(p3);
-                p3.setStock(p3.getStock() - 1);
+                p3.setStok(p3.getStok() - 1);
             }
             if (pilih == 4) {
                 cs.addToCart(p4);
-                p4.setStock(p4.getStock() - 1);
+                p4.setStok(p4.getStok() - 1);
             }
             if (pilih == 5) {
                 cs.addToCart(p5);
-                p5.setStock(p5.getStock() - 1);
+                p5.setStok(p5.getStok() - 1);
             }
             if (pilih == 6) {
                 cs.addToCart(p6);
-                p6.setStock(p6.getStock() - 1);
+                p6.setStok(p6.getStok() - 1);
             }
             if (pilih == 7) {
                 cs.addToCart(p7);
-                p7.setStock(p7.getStock() - 1);
+                p7.setStok(p7.getStok() - 1);
             }
             if (pilih == 8) {
                 cs.addToCart(p8);
-                p8.setStock(p8.getStock() - 1);
+                p8.setStok(p8.getStok() - 1);
             }
             if (pilih == 9) {
                 cs.addToCart(p9);
-                p9.setStock(p9.getStock() - 1);
+                p9.setStok(p9.getStok() - 1);
             }
             if (pilih == 10) {
                 cs.addToCart(p10);
-                p10.setStock(p10.getStock() - 1);
+                p10.setStok(p10.getStok() - 1);
             }
             if (pilih == 11) {
                 cs.addToCart(p11);
-                p11.setStock(p11.getStock() - 1);
+                p11.setStok(p11.getStok() - 1);
             }
             if (pilih == 12) {
                 cs.addToCart(p12);
-                p12.setStock(p12.getStock() - 1);
+                p12.setStok(p12.getStok() - 1);
             }
             if (pilih == 13) {
                 cs.addToCart(p13);
-                p13.setStock(p13.getStock() - 1);
+                p13.setStok(p13.getStok() - 1);
             }
             if (pilih == 99) {
                 cs.showFromCart();
@@ -115,18 +115,23 @@ public class main {
                 int cek = why.nextInt();
                 if (cek == 0) {
                     cs.checkOutFromCart();
-                    System.out.println("Tekan -1 untuk keluar | 1 untuk lanjut belanja");
+                    System.out.println("Tekan -1 untuk keluar | 1 untuk lanjut belanja | 0 untuk logout");
                     System.out.print("Pilihan : ");
                     int cc = why.nextInt();
                     if (cc == -1) {
                         System.exit(0);
                     }
-                    else
+                    else if (cc == 1){
                         pro = true;
+                    }
+                    else if (cc == 0){
+                        cs.hello();
+                    }
                 }
             }
 
         }
+
     }
 }
 

@@ -15,7 +15,7 @@ public class ShoppingCart {
     public double calculateTotal() {
         double total = 0;
         for (int i = 0; i < productCount; i++) {
-            total += listProduct[i].getPrice();
+            total += listProduct[i].getprice();
         }
         System.out.println("Total Harga : " + total);
         return total;
@@ -23,7 +23,7 @@ public class ShoppingCart {
 
     public void displayAllProduct() {
         for (int i = 0; i < productCount; i++) {
-            System.out.println("|1  | " + listProduct[i].getName() + " \t\t\t\t\t\t| " + listProduct[i].getPrice() + " \t\t\t| ");
+            System.out.println("|1  | " + listProduct[i].getNama() + " \t\t\t\t\t\t| " + listProduct[i].getprice() + " \t\t\t| ");
 
         }
         System.out.println("Jumlah Barang Di keranjang Belanja : " + productCount);

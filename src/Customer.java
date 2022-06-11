@@ -100,8 +100,8 @@ public class Customer extends Barang {
                 acc.setUsername(why.next());
                 System.out.print("Password : ");
                 acc.setPassword(why.next());
-                System.out.println("Data Berhasil dibuat!!");
-                showProfile();
+                System.out.println("Data Berhasil dibuat");
+                //showProfile();
             }
             if (pilih == 3) {
                 System.out.println("Saldo Kartu Kredit Anda : " + dc.getBalance());
@@ -136,13 +136,6 @@ public class Customer extends Barang {
             }
         }
     }
-
-
-
-
-    void stok(int nextInt) {
-    }
-
 
     @Override
     void info() {
