@@ -1,5 +1,4 @@
 public abstract class Barang {
-    //abstrak / kelas induk
     protected int stok;
     protected String nama;
     protected double price;
@@ -29,7 +28,6 @@ public abstract class Barang {
     }
 
     abstract void info();
-
 }
 
 

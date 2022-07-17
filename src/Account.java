@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Account extends Barang{
+public class Account{
     private String username;
     private String password;
     private double balance;
@@ -34,8 +34,4 @@ public class Account extends Barang{
         this.balance = balance;
     }
 
-    @Override
-    void info() {
-
-    }
 }
